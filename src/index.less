@@ -1,0 +1,250 @@
+  
+@theme: #8d9cd2;
+@link: #a178d8;
+@title: #4d61a9;
+@dark: #24292e;
+@font: #555;
+/*$selection-bg: var(--theme);*/
+@selection-fg: white;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/*:root {*/
+ /* --theme: #8d9cd2;
+  --link: #a178d8;
+  --title: #4d61a9;
+  --dark: #24292e;
+  --font: #555;
+  --selection-bg: var(--theme);
+  --selection-fg: white;*/
+/*}*/
+
+/* ::selection {
+  background: var(--selection-bg);--
+  color: var(--selection-fg);
+}
+*/
+body {
+  font-family: PingFang SC,Lantinghei SC,-apple-system,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+#main a {
+  color: var(--link)
+}
+
+#content {
+  position: relative;
+  display: flex;
+  width: 1060px;
+  min-height: 50px;
+  margin: 20px auto;
+  box-shadow: 0 0 2px 0 rgba(0,0,0, .15),
+  0 4px 4px -1px rgba(0,0,0, .18);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 29%;
+  background-color: #ff5da2;
+  color: #fff;
+  padding: 15px;
+  @media print {
+    background-color: #ff5da2;
+  }
+  .avatar-wrap {
+    margin: 25px auto 40px;
+    text-align: center;
+    img {
+      display: block;
+      width: 150px;
+      margin: 15px auto;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 400;
+    }
+    .desc {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  }
+  .side-li {
+    display: flex;
+    margin-bottom: 20px;
+    h2 {
+      line-height: 1.8;
+      font-size: 18px;
+      font-weight: inherit;
+    }
+    li {
+      font-size: 14px;
+      line-height: 1.5;
+      i {
+        margin-right: 3px;
+      }
+    }
+    .icon-tag {
+      font-size: 24px;
+      margin-right: 5px;
+    }
+  }
+}
+
+#main {
+  flex: 1;
+  padding: 15px;
+  color: var(--font);
+  .part {
+    margin: 15px auto;
+    h2 {
+      color: #ff5da2;
+      border-bottom: 1px solid #ff5da2;
+      font-weight: inherit;
+      line-height: 1.5;
+      margin: 12px auto;
+      display: flex;
+      align-items: center;
+      .iconfont {
+        font-size: 24px;
+        margin-right: 7px;
+      }
+      .icon-project {
+        font-size: 26px;
+      }
+    }
+    .info {
+      margin-left: 30px;
+      li {
+        line-height: 2;
+        span {
+          color: var(--dark);
+        }
+      }
+    }
+    .company {
+      h3 {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+        img {
+          height: 50px;
+          margin-right: 10px;
+        }
+      }
+    }
+    h3 {
+      font-size: 20px;
+      color: var(--title);
+    }
+    .person-project {
+      h3 {
+        line-height: 2;
+        margin-bottom: 10px;
+      }
+    }
+    .project {
+      border-left: 2px solid #ff5da2;
+      margin: 0 0 15px 5px;
+      padding-left: 20px;
+      position: relative;
+      &:before {
+        content: '';
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ff5da2;
+        position: absolute;
+        top: 0;
+        left: -9px;
+        @media print {
+          background-color: #ff5da2;
+        }
+      }
+      h4 {
+        color: var(--dark);
+        font-size: 18px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        a {
+          font-size: 12px;
+          border: 1px solid;
+          border-radius: 5px;
+          padding: 2px 3px;
+          margin-left: 15px;
+        }
+      }
+      p {
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+      img {
+        max-height: 200px;
+      }
+      .abandon {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+.loading {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+.line {
+  background-color: var(--theme);
+  width: 4px;
+  height: 35px;
+  margin: 3px;
+  border-radius: 2px;
+  display: inline-block;
+  animation: scaleLine 1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.28) both;
+}
+.line:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.line:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.line:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.line:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.line:nth-child(5) {
+  animation-delay: 0.5s;
+}
+@keyframes scaleLine {
+  0, 100% {
+    transform: scaleY(1)
+  }
+  50% {
+    transform: scaleY(0.4)
+  }
+}
+}
